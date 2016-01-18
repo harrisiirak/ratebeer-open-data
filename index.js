@@ -83,6 +83,7 @@ reader.on('line', function (line) {
   variation = variation.join(' ');
   variations.push(variation);
 
+  console.log(details);
   searchCollection.push({
     name,
     variations,
@@ -130,6 +131,7 @@ reader.on('close', function () {
         return;
       }
 
+      console.log(item);
       processSearchResult(response.variation, response.data, callback);
     })
   }, 1);
