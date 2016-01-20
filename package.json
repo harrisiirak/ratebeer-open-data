@@ -1,0 +1,22 @@
+{
+  "name": "ratebeer-open-data",
+  "version": "1.0.0",
+  "description": "Ratebeer.com open JSON database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "beer",
+    "ratebeer",
+    "dat",
+    "open data"
+  ],
+  "author": "Harri Siirak <harri.siirak@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "html-entities": "^1.2.0",
+    "ratebeer": "git+https://github.com/harrisiirak/ratebeer-scraper.git",
+    "yargs": "^3.31.0"
+  }
+}
