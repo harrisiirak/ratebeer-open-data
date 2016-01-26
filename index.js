@@ -125,7 +125,6 @@ function processBeerEntity(item, callback) {
         })
         .then((result) => {
           if (!result) {
-            callback(new Error('No data for ' + item.name));
             return;
           }
 
@@ -138,8 +137,8 @@ function processBeerEntity(item, callback) {
         });
     })
     .catch((err) => {
-      console.log(err);
-      console.log(item);
+      console.error(err);
+      console.error(item);
     });
 }
 
@@ -164,7 +163,7 @@ reader.on('line', function (line) {
 
     return;
   }
-
+  
   let name = escapeBeerName(details[1]);
   searchCollection.push({
     rbid: +details[0],
@@ -187,6 +186,7 @@ reader.on('close', function () {
       let prefix = (++index) + '/' + count + ' (' + item.rbid + ') ';
       if (err) {
         console.log(prefix + 'ERROR processing for', item.name);
+        console.log(err);
       } else {
         console.log(prefix + 'OK processing for', item.name);
       }
